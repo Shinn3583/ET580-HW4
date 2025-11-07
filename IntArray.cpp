@@ -48,3 +48,37 @@ void IntArray::replace(int index, int value) // Replace value at indexS
         arr[index] = value;
     }
 }
+// Ruoming Ye  11/06
+// Swap values at two indices
+void IntArray::swap(int index1, int index2) 
+{
+    if (index1 >= 0 && index1 < size && index2 >= 0 && index2 < size) {
+        int temp = arr[index1];
+        arr[index1] = arr[index2];
+        arr[index2] = temp;
+    }
+}
+
+// Print all array values
+void IntArray::print()
+{
+    for (int i = 0; i < size; i++) {
+        std::cout << arr[i];
+        if (i < size - 1) {
+            std::cout << " ";
+        }
+    }
+    std::cout << std::endl;
+}
+
+// Print total entries across all instances
+void IntArray::get_total_entries() 
+{
+    std::cout << total_entries << std::endl;
+}
+
+// Calculate percentage of total entries in this instance
+double IntArray::get_instance_percent()
+{
+    return (static_cast<double>(size) / total_entries) * 100.0;
+}
